@@ -49,6 +49,8 @@ const button = document.querySelector(".btn");
 //aggiungo all'evento click la creazione di un array contenente i numeri inseriti
 const guessedNumbers = [];
 let guessedNumber;
+//creo prima una variabile che conti le risposte corrette
+let guessedRight = 0;
 button.addEventListener(`click`,(e) => {
   e.preventDefault();
   for (i=0;i < userInputs.length; i++) {
@@ -56,8 +58,17 @@ button.addEventListener(`click`,(e) => {
     guessedNumbers.push(guessedNumber)
   }
   console.log(guessedNumbers)
+  //confronto i due array in un for
+  for (i=0; i<guessedNumbers.length; i++) {
+  if ( numbers.includes(i)) {
+    guessedRight = guessedRight +1;
+  }
+  }
+console.log(guessedRight)
 }
 )
+
+
 
 
 
