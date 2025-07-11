@@ -4,7 +4,7 @@ let generatedNumber = 0;
 
 //faccio un ciclo per riempire l'array con 5 numeri casuali
 for (i=0; i < 5;i++) {
-  generatedNumber = Math.floor(Math.random() * 50)
+  generatedNumber = Math.floor(Math.random() * 50 +1)
   numbers.push(generatedNumber)
 }
   console.log(numbers)
@@ -36,9 +36,29 @@ if (timer === 0 ) {
   numbersList.classList.add(`d-none`)
   instructions.innerText = `Inserisci i numeri che hai memorizzato`
   answers.classList.remove(`d-none`)
+  clearInterval(count)
 }
 }, 1000);
-  
+
+
+//prendo i valori che metterà l'utente
+//quindi definisco le variabil degli input e del tasto
+const userInputs = document.querySelectorAll(".form-control")
+const button = document.querySelector(".btn");
+
+//aggiungo all'evento click la creazione di un array contenente i numeri inseriti
+const guessedNumbers = [];
+let guessedNumber;
+button.addEventListener(`click`,(e) => {
+  e.preventDefault();
+  for (i=0;i < userInputs.length; i++) {
+    guessedNumber = parseInt(userInputs[i].value)
+    guessedNumbers.push(guessedNumber)
+  }
+  console.log(guessedNumbers)
+}
+)
+
 
 
 
