@@ -20,13 +20,26 @@ numbersList.innerHTML = `<ul id="numbers-list" class="d-flex gap-5 list-unstyled
 </ul>`
 
 //imposto il timer di 10 secondi da mostrare nel countdown
-//lo richiamo dal file html
+//lo richiamo dal file html insieme alle istruzioni e al form
 const countdown = document.getElementById(`countdown`)
+const instructions = document.getElementById(`instructions`)
+const answers = document.getElementById(`answers-form`)
 //dichiaro una variabile per il countdown
 let timer = 10;
 //imposto il timer per il conto alla rovescia con intervalli di 1000ms
 const count = setInterval(() => {
   timer--;
-  countdown.innerText = timer
+  countdown.innerText = timer;
+  //imposto che il timer sparisca quando finisce il tempo
+if (timer === 0 ) {
+  countdown.classList.add(`d-none`)
+  numbersList.classList.add(`d-none`)
+  instructions.innerText = `Inserisci i numeri che hai memorizzato`
+  answers.classList.remove(`d-none`)
+}
 }, 1000);
+  
+
+
+
 
