@@ -60,8 +60,8 @@ button.addEventListener(`click`,(e) => {
   console.log(guessedNumbers)
   //confronto i due array in un for
   for (i=0; i<guessedNumbers.length; i++) {
-  if ( numbers.includes(i)) {
-    guessedRight = guessedRight +1;
+  if ( numbers.includes(guessedNumbers[i])) {
+    guessedRight++;
   }
   }
 console.log(guessedRight)
