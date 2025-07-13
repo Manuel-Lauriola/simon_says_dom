@@ -45,6 +45,7 @@ if (timer === 0 ) {
 //quindi definisco le variabil degli input e del tasto
 const userInputs = document.querySelectorAll(".form-control")
 const button = document.querySelector(".btn");
+const message = document.getElementById(`message`)
 
 //aggiungo all'evento click la creazione di un array contenente i numeri inseriti
 const guessedNumbers = [];
@@ -65,6 +66,25 @@ button.addEventListener(`click`,(e) => {
   }
   }
 console.log(guessedRight)
+//infine do l'esito del gioco
+  if (guessedRight === 5) {
+    message.innerText = `hai indovinato tutti i numeri`
+  }
+    else if (guessedRight === 4) {
+      message.innerText = `hai indovinato 4 numeri`
+    }
+    else if (guessedRight === 3) {
+      message.innerText = `hai indovinato 3 numeri`
+    }
+    else if (guessedRight === 2) {
+      message.innerText = `hai indovinato 2 numeri`
+    }
+    else if (guessedRight === 1) {
+      message.innerText = `hai indovinato 1 numeri`
+    }
+    else {
+      message.innerText = `hai indovinato 0 numeri`
+    }
 }
 )
 
